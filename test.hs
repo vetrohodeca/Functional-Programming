@@ -1,8 +1,4 @@
-import System.Info
-
+main :: IO()
+ 
 main = do
-    print os
-    print arch
-    print compilerName
-    print compilerVersion
-    
+    print 4
