@@ -16,7 +16,7 @@ generate p n
     |otherwise =   (generate p (n-1)) ++ [(helper (fromIntegral n) p)]
 helper:: Double-> Double-> Double
 helper a p     
-    |a == 1    =1.0
+    |a == 1    =1.0     
     |otherwise = ((helper (a - 1) p)+ (1.0 / (a**p)))
  
 
@@ -30,7 +30,7 @@ isSquare:: Int -> Bool
 isSquare a= (isSquareHelper a 1) 
 
 isSquareHelper:: Int -> Int->Bool
-isSquareHelper number counter  
+isSquareHelper number counter   
     |counter*counter == number = True
     |counter*counter > number  = False
     |otherwise                 = (isSquareHelper number (counter+1))
@@ -44,7 +44,7 @@ sumOfDevidersHelper number counter
 -- 3 zad
 
 type Point = (Double, Double)
-splitPoints :: Point -> Double -> [Point] -> ([Point], [Point])
+splitPoints :: Point -> Double -> [Point]    -> ([Point], [Point])
 splitPoints center radius points= ((filter (checkInCircle center radius) points), (filter (\ x -> (not (checkInCircle center radius x))) points))
 
 checkInCircle:: Point -> Double -> Point -> Bool
